@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Sign up | TravelSafe</title>
+    <link rel="stylesheet" href="style.css">
+    <script language="javascript" src="/script.js"></script>
+</head>
+
+<body>
+    <!-- TODO: Add Navigation to all pages -->
+    <h1> Create an account </h1>
+    <form class="signup" action="/submissionsiteURLgoeshere" method="POST">
+
+        <div class="switch">
+            <p class="slider" id="Rider" onclick="uncheck()"> Rider </p>
+            <p class="slider" id="Driver" onclick="check()"> Driver </p>
+        </div>
+        <h3 class="p-head">Add Photo</h3>
+        <span class="photo-container">
+            <input type="file" placeholder="Add Photo" name="upload" id="upload" required> 
+            <img class="image" src="">
+            
+        </span>
+
+        <span class="signup-container">
+            <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
+            <input class="signup-input" id="last" type="text" placeholder="Last Name" name="lname" required>
+            <input class="signup-input" id="mail" type="email" placeholder="Email" name="email" required>
+            <input class="signup-input phone" type="tel" placeholder="Phone Number" name="tel" required>
+        <input class="signup-input user" type="text" placeholder="Username" name="user" required>
+        <div>
+            <input class="signup-input psw" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+            <input class="signup-input psw" type="password" placeholder="Confirm Password" name="pass" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+
+        </div>
+        <span id="signup-hide">
+            <input class="signup-input" type="text" placeholder="License Number" name="license" required min=6 max=7>
+        </span>
+        <span id="signup-show">
+            <h3 >Upload ID card</h3>
+            <input class="signup-input idc" type="file" name="idcard" required>
+        </span>
+        </span>
+        <div class="login">
+            Already have an account? <a href="/login.html"> Log in here</a>
+        </div>
+        <div>
+            <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
+        </div>
+    </form>
+</body>
+
+</html>
