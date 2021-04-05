@@ -151,25 +151,13 @@
             height: 150px;
         }
         
-        .image {
-            text-align: center;
-            font-size: 1em;
-            cursor: pointer;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-        }
-        
         #upload {
             cursor: pointer;
-            z-index: 1;
-            margin-top: 7vh;
-            position: absolute;
-            align-content: center;
+            margin-top: 1vh;
+            position: relative;
             opacity: 0;
-            width: 75em;
-            height: 75em;
-            border-radius: 10px;
+            width: 9.75rem;
+            height: 9.75em;
         }
         
         .signup-input {
@@ -181,13 +169,9 @@
             float: none;
         }
         
-        #signup-show {
-            display: unset;
-        }
+        #signup-show {}
         
-        #signup-hide {
-            display: none;
-        }
+        #signup-hide {}
         
         .login {
             display: block;
