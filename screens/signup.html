@@ -18,27 +18,26 @@
     </div>
     <!-- Rider signup - shows up by default -->
     <form class="signup" id="ridersignup">
-        <h4 class="p-head">Add Photo</h4>
+        <h4 class>Add Photo</h4>
         <span class="photo-container">
-            <input type="file" placeholder="Add Photo" name="profileImg" id="upload" required> 
-            <img class="image" src="">
+            
+            <input type="file" display="none" name="profileImg" id="upload" required> 
+            <img class="image" id="output" src="">
+            
         </span>
         <span class="signup-container">
             <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
             <input class="signup-input" id="last" type="text" placeholder="Last Name" name="lname" required>
             <input class="signup-input" id="mail" type="email" placeholder="Email" name="email" required>
-            <input class="signup-input phone" type="tel" placeholder="Phone Number" name="tel" required>
+            <input class="signup-input phone" type="tel" placeholder="Phone Number" name="phone" required>
         <input class="signup-input user" type="text" placeholder="Username" name="username" required>
         <div>
             <input class="signup-input psw" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
             <input class="signup-input psw" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
     
         </div>
-        <span id="id-upload">
-            <h5 >Upload ID card</h5>
-    <input class="signup-input idc" type="file" name="IDcard" required>
-        </span>
-
+            <h5>Upload ID card</h5>
+            <input class="signup-input idc" type="file" name="IDcard" required>
         </span>
 
         <div>
