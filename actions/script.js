@@ -17,11 +17,11 @@ function forgotpsw() {
 
 
 function check() { //Driver selected
-    document.getElementById("ridersignup").innerHTML = ""; //empty rider form
+    document.getElementById("signupForm").innerHTML = ""; //empty rider form
     let formdriver = `<h4 class="p-head">Add Photo</h4>
     <span class="photo-container">
-        <input type="file" name="profileImg" id="upload" required> 
-        <img class="image" src="">
+        <input type="file" display="none" name="profileImg" id="upload" required> 
+        <img class="image" id="output" src="">
     </span>
     <span class="signup-container">
         <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
@@ -51,7 +51,7 @@ function check() { //Driver selected
     <div>
         <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
     </div> `;
-    document.getElementById("driversignup").innerHTML = formdriver; //insert driver form
+    document.getElementById("signupForm").innerHTML = formdriver; //insert driver form
     var rider = document.getElementById("Rider");
     var driver = document.getElementById("Driver");
     var button = document.getElementById("next-btn").style;
@@ -84,17 +84,19 @@ function uncheck() { //Rider selected
     button.backgroundColor = "rgb(35, 10, 124)";
     button.color = "white";
 
-    document.getElementById("driversignup").innerHTML = ""; //empty driver form
-    let formrider = `<h4>Add Photo</h4>
+    document.getElementById("signupForm").innerHTML = ""; //empty driver form
+    let formrider = `<h4 class>Add Photo</h4>
     <span class="photo-container">
+        
         <input type="file" display="none" name="profileImg" id="upload" required> 
         <img class="image" id="output" src="">
+        
     </span>
     <span class="signup-container">
         <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
         <input class="signup-input" id="last" type="text" placeholder="Last Name" name="lname" required>
         <input class="signup-input" id="mail" type="email" placeholder="Email" name="email" required>
-        <input class="signup-input phone" type="tel" placeholder="Phone Number" name="tel" required>
+        <input class="signup-input phone" type="tel" placeholder="Phone Number" name="phone" required>
     <input class="signup-input user" type="text" placeholder="Username" name="username" required>
     <div>
         <input class="signup-input psw" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
@@ -102,10 +104,11 @@ function uncheck() { //Rider selected
 
     </div>
         <h5>Upload ID card</h5>
-<input class="signup-input idc" type="file" name="IDcard" required>
+        <input class="signup-input idc" type="file" name="IDcard" required>
     </span>
+
     <div>
         <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
     </div>`;
-    document.getElementById("ridersignup").innerHTML = formrider; //insert rider form
+    document.getElementById("signupForm").innerHTML = formrider; //insert rider form
 }
