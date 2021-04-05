@@ -2,4 +2,4 @@
 
 Description
 
-This website is built with a mobile-first approach.
+This website is built using various web technologies for a sleek web design and flawless functionality.
