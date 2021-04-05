@@ -1,0 +1,45 @@
+/*
+
+Author: Micah Brereton
+Description: Complements the Materialize CSS files for custom design. Do NOT modify.
+
+*/
+
+@font-face {
+  font-family: "Avenir-Blk";
+  src: url("C:/Users/Micah/Desktop/INFO 1601 - Project/Materialize/fonts/AvenirLTStd-Black.otf");
+}
+
+.active {
+  background-color: teal;
+}
+
+.element {
+  background-image: url("C:/Users/Micah/Desktop/INFO 1601 - Project/Materialize/img/homepage.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.brand-logo {
+  font-family: "Avenir-Blk";
+  font-weight: 900;
+}
+
+.material-icons {
+  margin-left: 3px;
+}
+
+.special-parallax {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 25px;
+  border-radius: 20px;
+}
+
+footer a {
+  color: red;
+}
+
+.footer-link-icon {
+  padding-top: 4px;
+}
