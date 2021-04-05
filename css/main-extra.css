@@ -7,7 +7,7 @@ Description: Complements the Materialize CSS files for custom design. Do NOT mod
 
 @font-face {
   font-family: "Avenir-Blk";
-  src: url("C:/Users/Micah/Desktop/INFO 1601 - Project/Materialize/fonts/AvenirLTStd-Black.otf");
+  src: url("fonts/AvenirLTStd-Black.otf");
 }
 
 .active {
@@ -15,7 +15,7 @@ Description: Complements the Materialize CSS files for custom design. Do NOT mod
 }
 
 .element {
-  background-image: url("C:/Users/Micah/Desktop/INFO 1601 - Project/Materialize/img/homepage.jpg");
+  background-image: url("img/homepage.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
