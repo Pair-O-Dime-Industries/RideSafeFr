@@ -11,6 +11,7 @@
 
 <body>
     <!-- TODO: Add Navigation to all pages -->
+    <nav></nav>
     <h1> Create an account </h1>
     <div class="switch">
         <p class="slider" id="Rider" onclick="uncheck()"> Rider </p>
@@ -23,7 +24,6 @@
             
             <input type="file" display="none" name="profileImg" id="upload" required> 
             <img class="image" id="output" src="">
-            
         </span>
         <span class="signup-container">
             <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
@@ -32,14 +32,14 @@
             <input class="signup-input phone" type="tel" placeholder="Phone Number" name="phone" required>
         <input class="signup-input user" type="text" placeholder="Username" name="username" required>
         <div>
-            <input class="signup-input psw" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
-            <input class="signup-input psw" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
-    
+        <input class="signup-input psw" id="password" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
+        letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onchange="validatePassword();">
+        <input class="signup-input psw" id="confirm_password" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
+        letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onkeyup="validatePassword();" )>
         </div>
             <h5>Upload ID card</h5>
             <input class="signup-input idc" type="file" name="IDcard" required>
         </span>
-
         <div>
             <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
         </div>
@@ -48,7 +48,8 @@
     <div class="login">
         Already have an account? <a href="../screens/login.html"> Log in here</a>
     </div>
-
+    <script>
+    </script>
     <script src="../actions/signup_actions.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>

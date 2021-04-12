@@ -1,4 +1,4 @@
-function forgotpsw() {
+function forgotpsw() { //Forgot password page
     document.getElementById("show").innerHTML +=
         `<style>
         #show {
@@ -111,4 +111,26 @@ function uncheck() { //Rider selected
         <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
     </div>`;
     document.getElementById("signupForm").innerHTML = formrider; //insert rider form
+}
+
+//Validation
+function validatePassword() {
+    var password = document.getElementById("password");
+    let confirm_password = document.getElementById("confirm_password");
+    if ((password.value) != (confirm_password.value)) {
+        password.setCustomValidity("Passwords don't match");
+        confirm_password.setCustomValidity("Passwords don't match");
+    } else {
+        confirm_password.setCustomValidity('');
+    }
+}
+
+function InvalidMsg() {
+    var password = document.getElementById("password");
+    if (password.validity.patternMismatch) {
+        password.setCustomValidity(`Please ensure that your password is at least 8 characters, has a number, an uppercase letter and a lowercase letter`);
+    } else {
+        password.setCustomValidity('');
+    }
+    return true;
 }
