@@ -142,20 +142,27 @@
         padding: 0px;
         margin-bottom: 0px;
     }
-    h4,
+    h4 {
+        color: white;
+        font-size: 16px;
+        text-shadow: black 1px 1px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(81, 81, 87);
+        opacity: 0.7;
+        border-radius: 30px;
+        text-align: center;
+        margin: 5px 5px;
+    }
     h5 {
         color: white;
         font-size: 16px;
         text-shadow: black 1px 1px;
         font-family: Arial, Helvetica, sans-serif;
-        /*text-shadow: black 1px 1px;*/
         background-color: rgb(81, 81, 87);
         opacity: 0.7;
         border-radius: 30px;
         text-align: center;
-        height: 1.2rem;
-        width: 0.2rem;
-        width: inherit;
+        margin: 5px 5px;
     }
     #s-bg {
         overflow: scroll;
@@ -226,6 +233,8 @@
         min-width: 140px;
         margin: 20px;
         float: none;
+        text-shadow: none;
+        color: black;
     }
     .login {
         display: block;
