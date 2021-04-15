@@ -116,12 +116,12 @@ function driverpg2() {
 
     let formdriver2 = `<span id="driverpg2">
     <label for="DOB">Please enter your Date of Birth:</label>
-    <input type="date" class="signup-input" id="DOB" name="DOB" placeholder="Enter Date of Birth" value="Date" min="1950-01-01" max="2003-01-01">
+    <input type="date" class="signup-input" id="DOB" name="DOB" placeholder="Enter Date of Birth" value="Date" min="1950-01-01" max="2003-01-01" required>
     <div class="address-group">
-        <input type="street" class="signup-input form-control" id="street1" placeholder="Address 1">
-        <input type="street" class="signup-input form-control" id="street2" placeholder="Address 2">
+        <input type="street" class="signup-input form-control" id="street1" placeholder="Address 1" required>
+        <input type="street" class="signup-input form-control" id="street2" placeholder="Address 2" required>
 
-        <input type="city" class="signup-input form-control" id="inputCity" placeholder="Town/Village/City">
+        <input type="city" class="signup-input form-control" id="inputCity" placeholder="Town/Village/City" required>
 
 
         <div class="carpic-container">
