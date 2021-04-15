@@ -1,27 +1,9 @@
-function forgotpsw() { //Forgot password page
-    document.getElementById("show").innerHTML +=
-        `<style>
-        #show {
-        display: none;
-        }
-        <style>
-    } `;
-    document.getElementById("hidden").innerHTML +=
-        `<style>
-            #hidden {
-        display: block;
-            }
-        <style>
-    } `;
-};
-
-
 function check() { //Driver selected
     document.getElementById("signupForm").innerHTML = ""; //empty rider form
     let formdriver = `<h4 class="p-head">Add Photo</h4>
     <span class="photo-container">
-        <input type="file" display="none" name="profileImg" id="upload" required> 
-        <img class="image" id="output" src="">
+    <input type="file" display="none" name="profileImg" id="upload" required> 
+    <img class="image" id="output" src="">
     </span>
     <span class="signup-container">
         <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
@@ -30,9 +12,11 @@ function check() { //Driver selected
         <input class="signup-input phone" type="tel" placeholder="Phone Number" name="tel" required>
     <input class="signup-input user" type="text" placeholder="Username" name="username" required>
     <div>
-        <input class="signup-input psw" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
-        <input class="signup-input psw" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
-    </div>
+        <input class="signup-input psw" id="password" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
+        letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onchange="validatePassword();">
+        <input class="signup-input psw" id="confirm_password" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
+        letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onkeyup="validatePassword();">
+        </div>
     <span id="license">
         <h5>Upload license</h5>
         <input class="signup-input" type="file" name="license" required>
@@ -49,7 +33,7 @@ function check() { //Driver selected
     </span>
 
     <div>
-        <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
+        <input class="submit-btn" id="next-btn" type="submit" value="Next" required>
     </div> `;
     document.getElementById("signupForm").innerHTML = formdriver; //insert driver form
     var rider = document.getElementById("Rider");
@@ -85,12 +69,11 @@ function uncheck() { //Rider selected
     button.color = "white";
 
     document.getElementById("signupForm").innerHTML = ""; //empty driver form
-    let formrider = `<h4 class>Add Photo</h4>
+    let formrider = `<h4>Add Photo</h4>
     <span class="photo-container">
         
         <input type="file" display="none" name="profileImg" id="upload" required> 
         <img class="image" id="output" src="">
-        
     </span>
     <span class="signup-container">
         <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
@@ -99,14 +82,14 @@ function uncheck() { //Rider selected
         <input class="signup-input phone" type="tel" placeholder="Phone Number" name="phone" required>
     <input class="signup-input user" type="text" placeholder="Username" name="username" required>
     <div>
-        <input class="signup-input psw" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
-        <input class="signup-input psw" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
-
+    <input class="signup-input psw" id="password" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
+    letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onchange="validatePassword();">
+    <input class="signup-input psw" id="confirm_password" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
+    letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onkeyup="validatePassword();">
     </div>
         <h5>Upload ID card</h5>
         <input class="signup-input idc" type="file" name="IDcard" required>
     </span>
-
     <div>
         <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
     </div>`;
@@ -134,3 +117,20 @@ function InvalidMsg() {
     }
     return true;
 }
+
+function forgotpsw() { //Forgot password page
+    document.getElementById("show").innerHTML +=
+        `<style>
+        #show {
+        display: none;
+        }
+        <style>
+    } `;
+    document.getElementById("hidden").innerHTML +=
+        `<style>
+            #hidden {
+        display: block;
+            }
+        <style>
+    } `;
+};
