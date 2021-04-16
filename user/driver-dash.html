@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="" content="">
+
+		<title>Driver Dashboard</title>
+
+		<link rel="stylesheet" href="../css/materialize.css">
+    <link rel="stylesheet" href="../css/driver-extra.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../js/materialize.js"></script>
+    <script src="https://kit.fontawesome.com/9603da10a6.js" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		<nav class="navbar-fixed nav-i">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo right nav-i black-text">TravelSafe<span class="red-text">TT</span></a>
+				<ul id="nav-mobile" class="">
+					<li><a class="nav-i" href="login.html">Logout <i class="fas fa-sign-out-alt fa-1x"></i></a></li>
+				</ul>
+			</div>
+		</nav>
+		<main>
+			<div>
+				<br class="spacetop">
+				<div class="center main-title">
+					<h1 id="dashboard-title" class="white-text"> Driver Dashboard </h1>
+				</div>
+				<br class="spacebot" />
+				<div class="row">
+					<div class="col l6 s12">
+						<div id="qr-box" class="container qr-box special-container">
+							<br>
+							<h3 class="center">Your QR Code</h3>
+							<br />
+							<div class="container center">
+								<img style="center" src="../img/qr-tstt.png" alt="Barcode"/>
+								<br class="spacebot">
+							</div>
+						</div>
+					</div>
+					<div class="col l6 s12">
+						<div id="public-info" class="container qr-box pub-container">
+							<br>
+							<h3 class="center">Your Public Info</h3>
+							<br />
+							<div class="container center">
+								<div class="row">
+									<!-- Javascript function can be written to pull data from database and punch into html -->
+									<div class="col l3 s12">
+										<img class="img-adjust" src=../img/placeholder.png alt="Driver-Photo" width="75" height="75" />
+									</div>
+									<div class="col l9 s12">
+										<h6 id="verified-driver-text" class="left"><i class="fas fa-user-shield"></i> Verified Driver </h6>
+									</div>
+								</div>
+								<div class="indent">
+									<p id="vehicle-model"> Vehicle: $your-vehicle-name </p>
+									<p id="vehicle-plate"> Vehicle Number Plate: $your-number-plate </p>
+								</div>
+								<p>Photos of Vehicle </p>
+								<div class="row">
+									<div class="col l4 s12">
+										<img src="" alt="Vehicle Picture 1">
+									</div>
+									<div class="col l4 s12">
+										<img src="" alt="Vehicle Picture 2">
+									</div>
+									<div class="col l4 s12">
+										<img src="" alt="Vehicle Picture 3">
+									</div>
+								</div>
+								<br class="spacebot">
+							</div>
+						</div>
+					</div>
+				</div>
+				<br class="spacebot">
+			</div>
+		</main>
+	</body>
+</html>
