@@ -1,0 +1,136 @@
+/*
+
+Author: Micah Brereton
+Description: Complements the Materialize CSS files for custom design. Do NOT modify.
+
+*/
+
+@font-face {
+  font-family: "Avenir-Blk";
+  src: url("../fonts/AvenirLTStd-Black.otf");
+}
+
+.active {
+  background-color: teal;
+  border-radius: 7px;
+}
+
+.load-frame {
+  background-image: url("../img/homepage.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-clip: content-box;
+}
+
+.brand-logo {
+  font-family: "Avenir-Blk";
+  font-weight: 900;
+}
+
+.banner-resize {
+  height: 90vw;
+}
+
+.banner-float {
+  margin-top: 10vw;
+}
+
+.material-icons {
+  margin-left: 3px;
+}
+
+.info-container {
+  border-radius: 5px;
+}
+
+.rider-container {
+  border-radius: 5px;
+}
+
+.team-container {
+
+  border-radius: 5px;
+
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dcolor1 {
+  background-color: #F8C3A6;
+}
+
+.dcolor2 {
+  background-color: #C5C3FA;
+}
+
+.main-img {
+
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+}
+
+.special-parallax {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 25px;
+  border-radius: 20px;
+}
+
+.space {
+  margin-top: 35px;
+}
+
+.hope {
+  border-radius: 5px;
+}
+
+.card-adjust {
+   border-radius: 10px;
+   margin-bottom: 20px;
+}
+
+.image-adjust {
+   border-radius: 50px;
+   margin-left: 10px;
+}
+
+h4.left {
+   margin-left: 10px;
+}
+
+.team-block {
+  margin-left: 40px;
+}
+
+.accent {
+  background-color: #080639;
+  border-radius: 25px;
+}
+
+.accent:hover {
+  background-color: #ffffff;
+  color: #080639;
+}
+
+.page-footer {
+  background-color: #080639;
+}
+
+.onscroll-color {
+  background-color: #080639;
+}
+
+.nav-i {
+  color: #ffffff;
+}
+
+footer a {
+  color: red;
+}
+
+.footer-link-icon {
+  padding-top: 4px;
+}

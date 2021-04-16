@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Avenir-Blk";
+  src: url("../fonts/AvenirLTStd-Black.otf");
+}
+
+body {
+  background-image: url("../img/homepage.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  background-clip: content-box;
+}
+
+.main-title {
+  font-family: Avenir-Blk;
+}
+
+.qr-box {
+  font-family: Avenir-Blk;
+  background-color: #ffffff;
+  border-radius: 25px;
+}
+
+.nav-i {
+  background-color: #F8CD46;
+  color: #000000;
+}
+
+.spacetop {
+  margin-top: 20px;
+}
+
+.spacebot {
+  margin-bottom: 20px;
+}
+
+.spacer {
+  margin-right: 50px;
+}
+
+.special-container {
+
+  width: 50vh;
+
+}
+
+.pub-container {
+  width: 60vh;
+}
+
+.indent {
+  text-align: left;
+  margin-left: 30px;
+}
+
+.img-adjust {
+  margin-top: -10px;
+  border-radius: 50px;
+  border: 2px solid green;
+  margin-right: 10px;
+}
+
+.public-info {
+  border-radius: 39px;
+}
+
+.pub-head {
+  display: inline-block;
+}
