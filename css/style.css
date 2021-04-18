@@ -167,7 +167,7 @@
         }
         #s-bg {
             overflow: scroll;
-            background-image: url("../assets/blur.jpg");
+            background-image: url("../img/blur.jpg");
         }
         .slider {
             display: inline-block;
