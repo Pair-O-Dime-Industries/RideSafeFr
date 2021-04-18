@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-container">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login | TravelSafett</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script language="javascript" src="../actions/script.js"></script>
+</head>
+
+<body>
+    <div id="show">
+        <a name="login-page"></a>
+        <h1> Welcome Back </h1>
+        <form class="login" action="/." method="POST">
+            <input type="text" class="login-input" placeholder="Email " name="email" refquired>
+            <input type="password" class="login-input" placeholder="Password" name="pass" required>
+            <div class="forgot">
+                <a href="javascript:forgotpsw()"> Forgot password? </a>
+            </div>
+            <span class="new-account">
+            Don&#39;t have an account? <a href="../screens/signup.html"> Sign up now. </a>
+        </span>
+            <input type="submit" value="Login" class="submit-btn">
+        </form>
+        <style>
+            #show {
+                display: block;
+            }
+        </style>
+    </div>
+    <!-- Forgot Password -->
+    <div id="hidden">
+        <h1> Reset Password</h1>
+        <form action="/" method="POST">
+            <h3 class="bor"> Please enter your email to request that your password be changed. </h3>
+            <input id="email-reset" type="email" placeholder="Enter email" required>
+            <input class="submit-btn" id="reset" type="submit" value="Reset Password">
+        </form>
+        <button class="submit-btn" id="cancel"> <a href="../screens/login.html" id="btn"> Cancel </a> </button>
+        <style>
+            #hidden {
+                display: none;
+            }
+        </style>
+    </div>
+</body>
+
+</html>

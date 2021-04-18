@@ -28,6 +28,7 @@
         </span>
             <input type="submit" value="Login" class="submit-btn">
         </form>
+        <button id="logout">Log out</button>
         <style>
             #show {
                 display: block;
@@ -35,10 +36,10 @@
         </style>
     </div>
     <!-- Forgot Password -->
-    <div id="hidden">
+    <!-- <div id="hidden">
         <h1> Reset Password</h1>
         <form action="/" method="POST">
-            <h3 class="bor"> Please enter your email to request that your password be changed. </h3>
+            <p> Please enter your email to request that your password be changed. </p>
             <input id="email-reset" type="email" placeholder="Enter email" required>
             <input class="submit-btn" id="reset" type="submit" value="Reset Password">
         </form>
@@ -47,8 +48,12 @@
             #hidden {
                 display: none;
             }
-        </style>
+        </style> -->
     </div>
+    <script src="../actions/login_action.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
+    <script language="javascript" src="../actions/script.js"></script>
 </body>
 
 </html>
