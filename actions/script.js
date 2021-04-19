@@ -245,3 +245,39 @@ function forgotpsw() { //Forgot password page
         <style>
     } `;
 };
+
+
+function rlogin() {
+
+    var rider = document.getElementById("Rider");
+    var driver = document.getElementById("Driver");
+    var button = document.getElementById("login-btn").style;
+
+    rider.style.backgroundColor = "rgb(35, 10, 124)";
+    rider.style.color = "white";
+    rider.style.position = "relative";
+    driver.style.position = "unset";
+    driver.style.backgroundColor = "white";
+    driver.style.color = "black";
+    driver.style.width = "8em";
+    rider.style.width = "7em";
+    button.backgroundColor = "rgb(35, 10, 124)";
+    button.color = "white";
+}
+
+function dlogin() {
+    var rider = document.getElementById("Rider");
+    var driver = document.getElementById("Driver");
+    var button = document.getElementById("login-btn").style;
+
+    rider.style.backgroundColor = "white";
+    rider.style.color = "black";
+    rider.style.position = "unset";
+    driver.style.position = "relative";
+    driver.style.backgroundColor = "yellow";
+    driver.style.color = "black";
+    button.backgroundColor = "yellow";
+    button.color = "black";
+    driver.style.width = "7em";
+    rider.style.width = "8em";
+}
