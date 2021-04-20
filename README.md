@@ -1,5 +1,10 @@
-RideSafeTT Frontend Interface Development
-Active Instance: https://travelsafett.ga
+RideSafeTT Frontend and UI Development
+Active Instances: 
+
+* For Web: https://travelsafett.ga
+* For Mobile: https://m.travelsafett.ga
+
+$ Web to Mobile redirects have been implemented
 
 The RideSafeTT Frontend is built using a combination of markup languages and frontend frameworks:
 
