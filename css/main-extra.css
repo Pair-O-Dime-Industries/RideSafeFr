@@ -1,8 +1,6 @@
 /*
-
 Author: Micah Brereton
 Description: Complements the Materialize CSS files for custom design. Do NOT modify.
-
 */
 
 @font-face {
@@ -38,27 +36,13 @@ Description: Complements the Materialize CSS files for custom design. Do NOT mod
   margin-left: 3px;
 }
 
-.rider-container {
-
-  height: 180vh;
-
-}
-
-.team-container {
-
-  height: 65vh;
-
-}
-
 .dropdown-content {
   display: none;
 }
 
 .main-img {
-
   border-radius: 5px;
   margin-bottom: 20px;
-
 }
 
 .special-parallax {
@@ -69,41 +53,25 @@ Description: Complements the Materialize CSS files for custom design. Do NOT mod
 }
 
 .space {
-
   margin-top: 35px;
-
 }
 
 .hope {
-
   border-radius: 5px;
-
 }
 
 .card-adjust {
-
    border-radius: 10px;
    margin-bottom: 20px;
-
 }
 
 .image-adjust {
-
    border-radius: 50px;
    margin-left: 10px;
-
 }
 
 h4.left {
-
    margin-left: 10px;
-
-}
-
-.team-block {
-
-  margin-left: 40px;
-
 }
 
 .accent {
@@ -111,24 +79,17 @@ h4.left {
   border-radius: 25px;
 }
 
-.page-footer {
+.fcol {
   background-color: #080639;
 }
 
 .onscroll-color {
-
   background-color: #080639;
-
 }
 
 .nav-i {
-
   color: #ffffff;
-
-
 }
-
-
 
 footer a {
   color: red;
