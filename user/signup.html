@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
-    <script language="javascript" src="../actions/script.js"></script>
+   
 </head>
 
 <body class="s">
@@ -19,12 +19,13 @@
         <p class="slider" id="Driver" onclick="check()"> Driver </p>
     </div>
     <!-- Rider signup - shows up by default -->
-    <form class="signup" id="signupForm">
+    <form class="signup" id="signupForm" onsubmit="riderSubmit()">
         <h4>Add Photo</h4>
         <span class="photo-container">
             
-            <input type="file" display="none" name="profileImg" id="upload" required> 
-            <img class="image" id="output" src="">
+            <input type="file" display="none" accept="image/*" name="profileImg" id="upload" onchange="displayImg(event)"
+                required>
+            <img class="image" id="output"  src="../img/placeholder.png">
         </span>
         <span class="signup-container">
             <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
@@ -39,7 +40,7 @@
         letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onkeyup="validatePassword();">
         </div>
             <h5>Upload ID card</h5>
-            <input class="signup-input idc" type="file" name="IDcard" required>
+            <input class="signup-input idc" type="file" name="IDcard" accept="image/*" required>
         </span>
         <div>
             <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
@@ -55,6 +56,7 @@
     <script src="../actions/signup_actions.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
+     <script language="javascript" src="../actions/script.js"></script>
 </body>
 
 </html>

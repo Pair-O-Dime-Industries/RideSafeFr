@@ -9,16 +9,16 @@
     $lname = test_input($_POST['lname']);
     $email = test_input($_POST['email']);
     $password = test_input($_POST['password']);
-    $mobile = test_input($_POST['phone']);
+    $mobile = test_input($_POST['tel']);
     $image = test_input($_FILES ['profileImg']['name']);
     $license = test_input($_FILES ['License']['name']);
     $LicensePlate = test_input($_POST ['LicensePlate']);
-    $make = test_input($_POST['Make']);
-    $model = test_input($_POST['Model']);
+    $make = test_input($_POST['make']);
+    $model = test_input($_POST['model']);
     $carImg = test_input($_FILES['CarPhoto']['name']);
-    $certCpy = test_input($_FILES['CcpyScn']['name']);
-    $reg = test_input ($_POST['Regno']);
-    $QrCode = md5($email.$license);
+    $certCpy = test_input($_FILES['cscan']['name']);
+    $reg = test_input ($_POST['regnum']);
+    $QrCode = md5($email.$LicensePlate);
     
     if(driverExists($email,$mobile,$LicensePlate) == false && carExists($LicensePlate) == false){
         //CODE TO ENSURE NO TWO IMAGES HAVE THE SAME NAME
@@ -51,7 +51,7 @@
             move_uploaded_file($_FILES['profileImg']['tmp_name'],$DriverImgPath.'/'.$image);
             move_uploaded_file($_FILES['License']['tmp_name'],$DriverImgPath.'/'.$license);
             move_uploaded_file($_FILES['CarPhoto']['tmp_name'],$carImgPath.'/'.$carImg);
-            move_uploaded_file($_FILES['CcpyScn']['tmp_name'],$carImgPath.'/'.$certCpy);
+            move_uploaded_file($_FILES['cscan']['tmp_name'],$carImgPath.'/'.$certCpy);
             }
             
         } else {

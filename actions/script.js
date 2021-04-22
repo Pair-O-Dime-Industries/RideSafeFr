@@ -1,9 +1,11 @@
 function check() { //Driver selected
     document.getElementById("signupForm").innerHTML = ""; //empty rider form
-    let formdriver = `<h4 class="p-head">Add Photo</h4>
+    let formdriver = `
+     <div class="step step-1 active">
+    <h4 class="p-head">Add Photo</h4>
     <span class="photo-container">
-    <input type="file" display="none" name="profileImg" id="upload" required> 
-    <img class="image" id="output" src="">
+    <input type="file" display="none" name="profileImg" id="upload" onchange="displayImg(event)" required> 
+    <img class="image" accept="image/*" id="output" src="../img/placeholder.png">
     </span>
     <span class="signup-container">
         <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
@@ -12,50 +14,99 @@ function check() { //Driver selected
         <input class="signup-input phone" type="tel" placeholder="Phone Number" name="tel" required>
     <input class="signup-input user" type="text" placeholder="Username" name="username" required>
     <div>
-        <input class="signup-input psw" id="password" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
+        <input class="signup-input psw" id="password" type="password" placeholder="Enter Password" name="pass" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
         letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onchange="validatePassword();">
-        <input class="signup-input psw" id="confirm_password" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
+        <input class="signup-input psw" id="confirm_password" type="password" placeholder="Confirm Password" name="password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
         letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onkeyup="validatePassword();">
         </div>
+        <button type="button" class="next-btn">Next</button>
+        </div>
+        <div class="step step-2">
     <span id="license">
         <h5>Upload license</h5>
-        <input class="signup-input" type="file" name="license" recquired>
-        <input class="signup-input" type="text" placeholder="License Plate Number" name="license" required min=6 max=7>
+        <input class="signup-input" type="file" accept="image/*" name="License" recquired>
+        <input class="signup-input" type="text" placeholder="License Plate Number" name="LicensePlate" required min=6 max=7>
         <input class="signup-input" type="text" placeholder=" Vehicle Make/Brand" name="make" required>
         <input class="signup-input" type="text" placeholder="Vehicle Model" name="model" required>  
         <input class="signup-input" type="number" placeholder="Registration Number" name="regnum" required>
-        <h5>Upload vehicle photo</h5>
-        <input class="signup-input" type="file" name="vphoto" required>
         <h5>Upload certified copy scan</h5>
-        <input class="signup-input" type="file" name="cscan" required>
+        <input class="signup-input" type="file" accept="image/*" name="cscan" required>
     </span>
-
+    <div class="carpic-container">
+            <label for="carpic-container">Please upload a photo of your vehicle:</label>
+            <input type="file" class="signup-input form-control" id="vphoto" name="CarPhoto" accept="image/*" required>
+</div>
     </span>
-
-    <div>
-        <button class="submit-btn" id="next-btn" onclick="driverpg2();" type="submit" value="Next" required> Next </button>
-    </div> `;
+    <button type="button" class="previous-btn">Prev</button>
+        <button type="submit" class="v2">Submit</button>
+    </div>
+    
+    `;
     document.getElementById("signupForm").innerHTML = formdriver; //insert driver form
     var rider = document.getElementById("Rider");
     var driver = document.getElementById("Driver");
-    var button = document.getElementById("next-btn").style;
+    // var button = document.getElementById("next-btn").style;
+    const steps = Array.from(document.querySelectorAll("form .step"));
+const nextBtn = document.querySelectorAll("form .next-btn");
+const prevBtn = document.querySelectorAll("form .previous-btn");
+const form = document.querySelector("form");
 
+nextBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("next");
+  });
+});
+prevBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("prev");
+  });
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const inputs = [];
+  form.querySelectorAll("input").forEach((input) => {
+    const { name, value } = input;
+    inputs.push({ name, value });
+  });
+  
+  form.reset();
+});
+
+function changeStep(btn) {
+  let index = 0;
+  const active = document.querySelector(".active");
+  index = steps.indexOf(active);
+  steps[index].classList.remove("active");
+  if (btn === "next") {
+    index++;
+  } else if (btn === "prev") {
+    index--;
+  }
+  steps[index].classList.add("active");
+}
     rider.style.backgroundColor = "white";
     rider.style.color = "black";
     rider.style.position = "unset";
     driver.style.position = "relative";
-    driver.style.backgroundColor = "yellow";
+    driver.style.backgroundColor = "#F8CD46";
     driver.style.color = "black";
-    button.backgroundColor = "yellow";
-    button.color = "black";
+    // button.backgroundColor = "yellow";
+    // button.color = "black";
     driver.style.width = "7em";
     rider.style.width = "8em";
 }
+ function displayImg(){
 
-function uncheck() { //Rider selected
+	var image = document.getElementById('output');
+    console.log(image);
+	image.src = URL.createObjectURL(this.event.target.files[0]);
+}
+
+async function uncheck() { //Rider selected
     var rider = document.getElementById("Rider");
     var driver = document.getElementById("Driver");
-    var button = document.getElementById("next-btn").style;
+    // var button = document.getElementById("next-btn").style;
 
     rider.style.backgroundColor = "rgb(35, 10, 124)";
     rider.style.color = "white";
@@ -65,15 +116,15 @@ function uncheck() { //Rider selected
     driver.style.color = "black";
     driver.style.width = "8em";
     rider.style.width = "7em";
-    button.backgroundColor = "rgb(35, 10, 124)";
-    button.color = "white";
+    // button.backgroundColor = "rgb(35, 10, 124)";
+    // button.color = "white";
 
     document.getElementById("signupForm").innerHTML = ""; //empty driver form
     let formrider = `<h4>Add Photo</h4>
     <span class="photo-container">
         
-        <input type="file" display="none" name="profileImg" id="upload" required> 
-        <img class="image" id="output" src="">
+        <input type="file" display="none" name="profileImg" accept="image/*" onchange="displayImg(event)" id="upload" required> 
+        <img class="image" id="output" src="../img/placeholder.png">
     </span>
     <span class="signup-container">
         <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
@@ -82,13 +133,13 @@ function uncheck() { //Rider selected
         <input class="signup-input phone" type="tel" placeholder="Phone Number" name="phone" required>
     <input class="signup-input user" type="text" placeholder="Username" name="username" required>
     <div>
-    <input class="signup-input psw" id="password" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
+    <input class="signup-input psw" id="password" type="password" placeholder="Enter Password" name="pass" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
     letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onchange="validatePassword();">
     <input class="signup-input psw" id="confirm_password" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase 
     letter, and at least 8 or more characters" oninvalid="InvalidMsg();" onkeyup="validatePassword();">
     </div>
         <h5>Upload ID card</h5>
-        <input class="signup-input idc" type="file" name="IDcard" required>
+        <input class="signup-input idc" type="file" accept="image/*" name="IDcard" required>
     </span>
     <div>
         <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
@@ -107,8 +158,8 @@ function driverpg2() {
     driver.style.position = "relative";
     driver.style.backgroundColor = "yellow";
     driver.style.color = "black";
-    button.backgroundColor = "yellow";
-    button.color = "black";
+    // button.backgroundColor = "yellow";
+    // button.color = "black";
     driver.style.width = "7em";
     rider.style.width = "8em";
 
@@ -126,9 +177,9 @@ function driverpg2() {
 
         <div class="carpic-container">
             <label for="carpic-container">Please upload 3 photos of your vehicle:</label>
-            <input type="file" class="signup-input form-control" id="carpic1" required>
-            <input type="file" class="signup-input form-control" id="carpic2" required>
-            <input type="file" class="signup-input form-control" id="carpic3" required>
+            <input type="file" class="signup-input form-control" id="carpic1" accept="image/*" required>
+            <input type="file" accept="image/*" class="signup-input form-control" id="carpic2" required>
+            <input type="file" accept="image/*" class="signup-input form-control" id="carpic3" required>
         </div>
     </span>
 

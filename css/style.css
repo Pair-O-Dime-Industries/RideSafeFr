@@ -11,6 +11,7 @@
             -webkit-backdrop-filter: blur(4px);
             overflow: hidden;
         }
+      
         #text {
             filter: none;
         }
@@ -165,6 +166,52 @@
             text-align: center;
             margin: 5px 5px;
         }
+        .next-btn{
+            background-color:#F8CD46;
+            color: rgb(0, 0, 0);
+            padding: 14px 20px;
+            cursor: pointer;
+            width: 9em;
+            display: block;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 3em;
+            margin-left: auto;
+            margin-right: auto;
+            font: 14px Arial;
+            border: none;
+            border-radius: 90px;
+        }
+         .v2{
+            background-color:#F8CD46;
+            color: rgb(0, 0, 0);
+            padding: 14px 20px;
+            cursor: pointer;
+            width: 9em;
+            display: inline-block;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 1em 1em 3em 3em;
+            font: 14px Arial;
+            border: none;
+            border-radius: 90px;
+        }
+        .previous-btn{
+            background-color:#F8CD46;
+            color: rgb(0, 0, 0);
+            padding: 14px 20px;
+            cursor: pointer;
+            width: 9em;
+            display: inline-block;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 1em auto;
+            margin-left: auto;
+            margin-right: auto;
+            font: 14px Arial;
+            border: none;
+            border-radius: 90px;
+        }
         #s-bg {
             overflow: scroll;
             background-image: url("../img/blur.jpg");
@@ -218,14 +265,22 @@
             top: 0;
             left: 0;
             z-index: -1;
+            
         }
+        .step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
         #upload {
             cursor: pointer;
             margin-top: 1vh;
             position: relative;
             opacity: 0;
-            width: 9.75rem;
-            height: 9.75em;
+            width: 9.55rem;
+            padding: 0;
+            height: 10.75em;
         }
         .signup-input {
             border-radius: 100px;

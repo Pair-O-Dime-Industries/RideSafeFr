@@ -16,13 +16,9 @@ function isEmpty(input){
         return true;
     }  
 }
-upload.onchange = async (event) =>{
 
-	var image = document.getElementById('output');
-	image.src = URL.createObjectURL(event.target.files[0]);
-}
-signupForm.onsubmit = async (e) => {
-    e.preventDefault();
+function riderSubmit(){
+    this.event.preventDefault();
     let data = new FormData(document.forms.signupForm);
     let pass = data.get("password");
     pass = sha256(pass);
@@ -30,8 +26,13 @@ signupForm.onsubmit = async (e) => {
     for(let value of data.values()){
         console.log(value);
     }
-        var oReq = new XMLHttpRequest(); 
-        oReq.open("POST", "../backend/signup.php", true);
+        var oReq = new XMLHttpRequest();
+        if(data.has('LicensePlate')){
+             oReq.open("POST", "../backend/driversignup.php", true);
+        }else{
+            oReq.open("POST", "../backend/signup.php", true);
+        }
+        
         oReq.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
             var response = this.responseText;
@@ -56,5 +57,4 @@ signupForm.onsubmit = async (e) => {
     
     oReq.send(data);
 }
-
 

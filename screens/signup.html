@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
-    <script language="javascript" src="../actions/script.js"></script>
+  
 </head>
 
 <body class="s">
@@ -23,8 +23,8 @@
         <h4>Add Photo</h4>
         <span class="photo-container">
             
-            <input type="file" display="none" name="profileImg" id="upload" required> 
-            <img class="image" id="output" src="">
+            <input type="file" display="none" accept="image/*" name="profileImg" id="upload" required>
+            <img class="image" id="output" src="../img/placeholder.png">
         </span>
         <span class="signup-container">
             <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
@@ -55,6 +55,7 @@
     <script src="../actions/signup_actions.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
+      <script language="javascript" src="../actions/script.js"></script>
 </body>
 
 </html>
