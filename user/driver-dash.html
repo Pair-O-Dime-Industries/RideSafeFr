@@ -19,7 +19,8 @@
 			};
 			req.send(JSON.stringify(data));
 		</script>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script src="../actions/qr_actions.js" type="text/javascript"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="" content="">
 
@@ -31,6 +32,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../js/materialize.js"></script>
     <script src="https://kit.fontawesome.com/9603da10a6.js" crossorigin="anonymous"></script>
+
 	</head>
 
 	<body>
@@ -55,7 +57,7 @@
 								<br>
 								<h4 class="center">Your QR Code</h4>
 								<div class="container center">
-									<img  src="../img/qr-tstt.png" alt="Barcode"/>
+									<img id="qr" src="" alt="Barcode"/>
 									<br class="spacebot">
 									<br>
 								</div>
@@ -67,17 +69,16 @@
 								<br />
 								<div class="container center">
 									<div class="pub-head">
-										<img class="img-adjust left" src=../img/placeholder.png alt="Driver-Photo" width="75" height="75" />
+										<img id="propic" class="img-adjust left" src="../img/placeholder.png" alt="Driver-Photo" width="75" height="75" />
 										<h5 id="verified-driver-text" class="right"><i class=" green-text fas fa-user-shield"></i> Verified Driver </h5>
 									</div>
-									<div class="indent">
-										<p id="vehicle-model"> Vehicle: $your-vehicle-name </p>
-										<p id="vehicle-plate"> Vehicle Number Plate: $your-number-plate </p>
+									<div class="indent" id="vehicle_container">
+										
 									</div>
 									<p>Photos of Vehicle </p>
-											<img src="../img/car.jpg" width="75" height="75" alt="Vehicle Picture 1">
-											<img src="../img/car.jpg" width="75" height="75" alt="Vehicle Picture 2">
-											<img src="../img/car.jpg" width="75" height="75" alt="Vehicle Picture 3">
+											<img id="carimg1" src="../img/car.jpg" width="75" height="75" alt="Vehicle Picture 1">
+											<!-- <img src="../img/car.jpg" width="75" height="75" alt="Vehicle Picture 2">
+											<img src="../img/car.jpg" width="75" height="75" alt="Vehicle Picture 3"> -->
 									<br class="spacebot">
 								</div>
 							</div>

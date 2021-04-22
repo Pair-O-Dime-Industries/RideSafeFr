@@ -12,4 +12,8 @@ defined('SITE_ROOT') ? null : define('SITE_ROOT', realpath(dirname(__FILE__)));
       if(!$conn){
           die('Could not Connect MySql Server:' .mysql_error());
         }
+
+$DriverImgPath = SITE_ROOT . DS . '..' . DS . 'images/driver/driverImg';
+$carImgPath = SITE_ROOT . DS . '..' . DS . 'images/driver/carImg';
+
 ?>

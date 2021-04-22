@@ -1,19 +1,4 @@
-//  async function getCode(){
-//     //  var req = new XMLHttpRequest();
-//     // var jsonResponse ;
-//     //     let url = "../backend/qrCode.php";
-//     //     req.responseType = 'json';
-//     //     req.open('POST', url, true);
-//     //     req.setRequestHeader("Content-Type", "application/json");
-//     //     req.onload = function () {
-//     //          jsonResponse = req.response;
-//     //         alert(jsonResponse.msg);
-//     //     };
-//     //     req.send(JSON.stringify(null));
-//     //     return jsonResponse.json();
-//     let response = await sendRequest('../backend/qrCode.php','POST');
-//     alert(response.msg);
-//     }
+
 const domain = "http://api.qrserver.com/v1/create-qr-code/?data=";
 
         async function sendRequest(url, method, data) {
@@ -32,18 +17,31 @@ const domain = "http://api.qrserver.com/v1/create-qr-code/?data=";
             return response.json();
         }
 
-async function createCode(){
-    let response = await sendRequest('../backend/qrCode.php','POST');
-    let qr = sendRequest(domain+response.msg+'&size=300x300');
 
-}
 async function displayCode(){
     let response = await sendRequest('../backend/qrCode.php','POST');
-    let html = `
-        <img src="https://api.qrserver.com/v1/create-qr-code/?data=${response.msg}&amp;size=300x300" alt="" title="" />
-    `;
-     document.getElementById('qr').innerHTML = html;
+    var img = document.getElementById('qr');
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${response.msg}&amp;size=50x50`;
+    
 
 }
+function displayDriverInfo(response){
+    let img = document.getElementById('propic');
+    img.src = `${response.profile}`;
+    let driver = document.getElementById('verified-driver-text');
+    driver.innerHTML = `${response.name}`;
+    let html = document.getElementById('vehicle_container');
+    html.innerHTML =`
+    <p id="vehicle-model"> Vehicle: ${response.vehicle} </p>
+    <p id="vehicle-plate"> Vehicle Number Plate: ${response.numplate} </p>
+    `;
+    let carIMG = document.getElementById('carimg1');
+    carIMG.src = `${response.carimg}`;
+}
+async function fetchDriverData(){
+    let response = await sendRequest('../backend/driverdash.php','POST');
+    displayDriverInfo(response);
+}
+
 displayCode();
-// createCode();
+fetchDriverData();

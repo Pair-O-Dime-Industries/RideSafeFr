@@ -99,7 +99,7 @@ function changeStep(btn) {
  function displayImg(){
 
 	var image = document.getElementById('output');
-    console.log(image);
+    
 	image.src = URL.createObjectURL(this.event.target.files[0]);
 }
 
