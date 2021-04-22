@@ -26,21 +26,23 @@ function riderExists($username, $PhNum, $Email){
 
 // }
 function check_R_login(){
-if (!(isset($_SESSION['RiderID']) && $_SESSION['RiderID'] != '')) {
-    $test = $_SESSION['RiderID'];
-    // User is not logged in!
+if (isset($_SESSION['RiderID']) && $_SESSION['RiderID'] != '') {
+    
     $result = array(
-        'error' => true,
-        'msg' => 'Please login first!',
-    );
+    'error' => false,
+    'msg' => 'isLoggedin',
+);
 
 } else {
-
-
+       
     $result = array(
-        'error' => false,
-        'msg' => 'isLoggedin',
-    );
+    'error' => true,
+    'msg' => 'Please login first!',
+
+  
+ 
+);
+
 }
 
 
