@@ -17,25 +17,13 @@ include_once './functions.php';
         echo 0;
     }
     }
-   $data = json_decode(file_get_contents("php://input"));
-
-
-  
-    if(isset($data->check)){
-        checklogin();
-
-    }
-        
-    
-//    if(isset($data->logout)){
-//      unset($_SESSION['RiderID']);
-//     echo true;
-//    }
    
+    
 
 
-//     exit();
-//    mysqli_close($conn);
+
+    exit();
+   mysqli_close($conn);
 
 
 ?>

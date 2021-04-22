@@ -18,27 +18,38 @@ function isEmpty(input){
     }  
 }
 
-loginForm.onsubmit = async (e) => {
-    e.preventDefault();
+function Login(){
+    this.event.preventDefault();
     let data = new FormData(document.forms.loginForm);
     let pass = data.get("password");
     pass = sha256(pass);
     data.set("password",pass);
         var oReq = new XMLHttpRequest(); 
-        oReq.open("POST", "../backend/login.php", true);
+        if(is_Driver==false){
+            oReq.open("POST", "../backend/login.php", true);
+        }
+        else if(is_Driver == true){
+            oReq.open("POST", "../backend/driverlogin.php", true);
+        }
+        
         oReq.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
             var response = this.responseText;
             
-            if(response == 1){
+            if(response == 1 && is_Driver == false){
                 alert("Login Successful");
-                window.location.href="../screens/dashboard.html";
+              
+                window.location.href="../user/rider-dash.html";
             }
-            else if(response == 2){
-                alert("An error was encountered. Re-enter data and try again.")
+            else if(response == 1 && is_Driver == true){
+                alert("Login Successful");
+                 
+                window.location.href="../user/driver-dash.html";
             }
-            else if(response == 4){
-                alert("Username/mobile/email is already in use.");
+            
+            else if(response == 0){
+                alert("Incorrect Email/Password used. Please re-enter and try again!");
+
             }
         }
     };  

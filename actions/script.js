@@ -1,10 +1,10 @@
-function check() { //Driver selected
+function check() { 
     document.getElementById("signupForm").innerHTML = ""; //empty rider form
     let formdriver = `
      <div class="step step-1 active">
     <h4 class="p-head">Add Photo</h4>
     <span class="photo-container">
-    <input type="file" display="none" name="profileImg" id="upload" onchange="displayImg(event)" required> 
+    <input type="file" display="none" name="profileImg" accept="image/*" id="upload" onchange="displayImg(event)" required> 
     <img class="image" accept="image/*" id="output" src="../img/placeholder.png">
     </span>
     <span class="signup-container">
@@ -297,13 +297,13 @@ function forgotpsw() { //Forgot password page
     } `;
 };
 
-
+ let is_Driver = false;
 function rlogin() {
 
     var rider = document.getElementById("Rider");
     var driver = document.getElementById("Driver");
     var button = document.getElementById("login-btn").style;
-
+    is_Driver = false;
     rider.style.backgroundColor = "rgb(35, 10, 124)";
     rider.style.color = "white";
     rider.style.position = "relative";
@@ -320,7 +320,7 @@ function dlogin() {
     var rider = document.getElementById("Rider");
     var driver = document.getElementById("Driver");
     var button = document.getElementById("login-btn").style;
-
+    is_Driver = true;
     rider.style.backgroundColor = "white";
     rider.style.color = "black";
     rider.style.position = "unset";
@@ -331,4 +331,5 @@ function dlogin() {
     button.color = "black";
     driver.style.width = "7em";
     rider.style.width = "8em";
+    
 }

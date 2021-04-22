@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login | TravelSafett</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script language="javascript" src="../actions/script.js"></script>
+  
 </head>
 
 <body>
@@ -17,9 +17,9 @@
     <div id="show">
         <a name="login-page"></a>
         <h1> Welcome Back </h1>
-        <form class="login" action="/." method="POST">
+        <form class="login" id="loginForm" onsubmit="Login()" >
             <input type="text" class="login-input" placeholder="Email " name="email" refquired>
-            <input type="password" class="login-input" placeholder="Password" name="pass" required>
+            <input type="password" class="login-input" placeholder="Password" name="password" required>
             <div class="forgot">
                 <a href="javascript:forgotpsw()"> Forgot password? </a>
             </div>

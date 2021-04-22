@@ -25,7 +25,7 @@ function riderExists($username, $PhNum, $Email){
 
 
 // }
-function checklogin(){
+function check_R_login(){
 if (!(isset($_SESSION['RiderID']) && $_SESSION['RiderID'] != '')) {
     $test = $_SESSION['RiderID'];
     // User is not logged in!
@@ -36,16 +36,43 @@ if (!(isset($_SESSION['RiderID']) && $_SESSION['RiderID'] != '')) {
 
 } else {
 
-    // write the needed code to save the vote to db here
 
     $result = array(
         'error' => false,
-        'msg' => 'Thanks!',
+        'msg' => 'isLoggedin',
     );
 }
+
+
 header('Content-type: application/json');
 echo json_encode($result);
 }
+
+
+function check_D_login()
+{
+    if (!(isset($_SESSION['DriverID']) && $_SESSION['DriverID'] != '')) {
+        $test = $_SESSION['DriverID'];
+        // User is not logged in!
+        $result = array(
+            'error' => true,
+            'msg' => 'Please login first!',
+        );
+
+    } else {
+
+ 
+
+        $result = array(
+            'error' => false,
+            'msg' => 'isLoggedin',
+        );
+    }
+
+    header('Content-type: application/json');
+    echo json_encode($result);
+}
+
 function test_input($data)
 {
     $data = trim($data);
