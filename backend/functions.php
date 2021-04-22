@@ -53,21 +53,21 @@ echo json_encode($result);
 
 function check_D_login()
 {
-    if (!(isset($_SESSION['DriverID']) && $_SESSION['DriverID'] != '')) {
-        $test = $_SESSION['DriverID'];
-        // User is not logged in!
+    if (isset($_SESSION['DriverID']) && $_SESSION['DriverID'] != '') {
+        
         $result = array(
-            'error' => true,
-            'msg' => 'Please login first!',
-        );
+    'error' => false,
+    'msg' => 'isLoggedin',
+);
+
 
     } else {
 
  
 
-        $result = array(
-            'error' => false,
-            'msg' => 'isLoggedin',
+         $result = array(
+    'error' => true,
+    'msg' => 'Please login first!',
         );
     }
 
