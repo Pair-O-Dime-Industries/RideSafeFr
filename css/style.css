@@ -332,3 +332,23 @@
         font-family: bold;
         font-size: 16px;
     }
+    
+    .rlogin {
+        width: 1rem;
+        height: 20px;
+        margin-bottom: 4vh;
+        font-size: 12px;
+        background-color: unset;
+        position: inherit;
+        color: unset;
+    }
+    
+    .dlogin {
+        width: 2rem;
+        height: 20px;
+        margin-bottom: 4vh;
+        font-size: 12px;
+        background-color: unset;
+        position: inherit;
+        color: unset;
+    }
