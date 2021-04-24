@@ -146,7 +146,95 @@ async function uncheck() { //Rider selected
     </div>`;
     document.getElementById("signupForm").innerHTML = formrider; //insert rider form
 }
+function displayQrResponse(response){
+    let html = document.getElementById('page');
+    let background = document.getElementById('mainpage');
+    background.className= 'altbody';
+    html.innerHTML = ``;
+    html.innerHTML = `
+				<div class="center main-title">
+					<h1 id="dashboard-title" style="font-size: 37px;"> Scan Successful </h1>
+				</div>
+				<br class="spacebot" />
+    <div id="public-info" class="container qr-box">
+								<br>
+								<br />
+								<div class="container center">
+									<div class="pub-head">
+										<img id="propic" class="img-adjust left" src="${response.profile}" alt="Driver-Photo" width="75" height="75" />
+										<h5 id="verified-driver-text" class="right"><i class=" green-text fas fa-user-shield"></i> ${response.name} </h5>
+									</div>
+									<div class="indent" id="vehicle_container">
+										<p id="vehicle-model"> Vehicle: ${response.vehicle} </p>
+                                        <p id="vehicle-plate"> Vehicle Number Plate: ${response.numplate} </p>
+									</div>
+									<p>Photos of Vehicle </p>
+											<img id="carimg1" src="${response.carimg}" width="75" height="75" alt="Vehicle Picture 1">
+									<br class="spacebot">
+								</div>
+							</div>
+							<br class="spacebot" />
+						</div>
+					</div>
+                    <p class="safety">For your safety, please ensure that the driver is the person seen in the photo, the car matches the car in the photos and the number plate is exactly as stated here</p>
+                    
+                    <p class="disclaimer">A driver with a TravelSafeTT QR code is only trustworthy if the information represented here matches what you see.</p>
+                    <br class="spacebot" />
+                    <div class="center">
+                    <a href ="../user/rider-dash.html"
+                        
+								style="border-radius: 38px; text-align:center; background-color: #080639;" id="button"
+								class="btn-large waves-effect waves-light"><span
+									style="font-size: small;">Done</span></a>
+                                    <br class="spacebot" />
+                                    	<br class="spacetop">
+                                    </div>
+				</div>`;
+}
+  async function sendRequest(url, method, data) {
+            const options = {
+                method
+            };
 
+            if (data) {
+                options.body = JSON.stringify(data);
+                options.headers = {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                };
+            }
+            let response = await fetch(url, options);
+            return response.json();
+        }
+async function scan(){
+    let qr;
+    document.getElementById('modal_id').style.display='block';
+    let scanner = new Instascan.Scanner({
+    video: document.getElementById('preview')
+    });
+    await scanner.addListener('scan',async function (content) {
+    qr = content;
+    
+    scanner.stop();
+    let data = {
+        code : qr
+    };
+    let response = await sendRequest("../backend/getdriver.php","POST",data);
+    displayQrResponse(response);
+    
+        
+    });
+
+    Instascan.Camera.getCameras().then(function (cameras) {
+    if (cameras.length > 0) {
+    scanner.start(cameras[0]);
+    } else {
+    console.error('No cameras found.');
+    }
+    }).catch(function (e) {
+    console.error(e);
+    });
+}
 function driverpg2() {
     var rider = document.getElementById("Rider");
     var driver = document.getElementById("Driver");

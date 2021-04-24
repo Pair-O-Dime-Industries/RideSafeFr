@@ -9,9 +9,54 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+.altbody {
+  all: unset;
+}
+#preview{
+  width: 100%;
+  height: 100%;
 
+}
+#modal_id{
+display: none;
+    padding-top: 50px;
+    z-index: 3;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    overflow: auto;
+ 
+   
+}
+.w3-container{
+  padding: 0.01em 16px;
+}
+.w3-modal-content {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 600px;
+}
+.w3-modal-content {
+    margin: 0 10px;
+    width: auto!important;
+}
+.w3-card-4, .w3-hover-shadow:hover {
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+}
 main {
   color: #080639;
+  margin-top: 100px;
 }
 
 .main-title {
@@ -19,14 +64,28 @@ main {
   font-family: Avenir-Blk;
 
 }
-
+.safety{
+color: #070836;
+    font-size: 15px;
+    margin: 20px;
+}
+.disclaimer{
+  color: #EB3F25;
+ 
+  font-size: 13px;
+   margin: 20px;
+}
 .box {
   font-family: Avenir-Blk;
   background-color: #ffffff;
   border-radius: 10px;
   padding-top: 3px;
 }
-
+.qr-box {
+  font-family: Avenir-Blk;
+  background-color: #ffffff;
+  border-radius: 25px;
+}
 .info-date {
   font-size: small;
   margin-left: 12px;
